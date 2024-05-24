@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/favicon.png" type="image/png">
+    
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
     <script src="https://kit.fontawesome.com/c3debeb7cc.js" crossorigin="anonymous"></script>
     <title>To do's</title>
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -35,8 +36,26 @@
                 <a href="#"><i class="fa-solid fa-gears"></i></a>
             </div>         
         </div>
-
     </header>
-    
+    <div class="guide-signs">
+        <a href=""><i class="fa-solid fa-pencil"></i></a>
+        <a href=""><i class="fa-regular fa-star"></i></a>
+        <a href=""><i class="fa-solid fa-recycle"></i></a>
+    </div>
+    <div class="contaier">
+        <div class="draft-container">
+            <div class="nte">
+                <div class="nte-input">
+                    <input type="text" class="nte-headline" id="todo-input" placeholder="Neue Liste..." >
+                    <textarea placeholder="neue Notiz" class="nte-text" id="nte-text" cols="30" rows="20"></textarea>
+                    <button id="add-todo"><i class="fa-regular fa-square-check"></i></button>
+                </div>
+            </div>
+        </div>
+    <div class="new-container"></div>
+    </div>
+    <footer>
+        
+    </footer>
 </body>
 </html>
