@@ -1,7 +1,6 @@
 footer {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 24px;
 }
 
 .separator-div-left,
@@ -96,7 +95,7 @@ footer {
     padding-bottom: 20px;
 }
 
-  
+
 @media (max-width: 751px) {
     footer {
       height: 220px;

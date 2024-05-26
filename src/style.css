@@ -3,24 +3,22 @@
     src: url('../fonts/eraser/EraserRegular.ttf') format('truetype');
 }
 
-html, 
+html {
+    height: 100vh;
+}
+ 
 body {
     background-image: url(../img/tafel.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
     margin: 0;
-    padding: 0;
     font-family: 'Eraser', sans-serif;
 }
+
 
 header {
     padding: 0px 20px;
     margin: 0;
-}
-
-.overflow-x-hidden {
-    overflow-x: hidden;
 }
 
 .hero-section {
@@ -106,63 +104,11 @@ header {
     padding: 10px;
 }
 
-
-#menu-toggle {
-    display: none;
-}
-
-.burger-menu {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.burger-icon {
-    font-size: 70px;
-    cursor: pointer;
-    display: none;
-}
-
-.menu {
-    display: flex;
-    position: absolute;
-    top: 1;
-    right: 0;
-    background-color: transparent;
-    border: 1px solid #ccc;
-    width: 200px;
-    flex-direction: column;
-    transform: translateX(100px);
-    transform: translateY(100px);
-    transition: all 225ms ease-in-out;
-}
-
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.menu li {
-    margin: 0;
-    padding: 8px 16px;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: #000;
-}
-
-.menu li a:hover {
-    background-color: rgba(228, 42, 79, 0.534);
-    padding: 10px;
-}
-
 .draft-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: -200px;
-    flex: 1;
     margin-bottom: 200px;
 }
 
@@ -175,6 +121,8 @@ header {
 .note {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 800px;
 }
 
 .note input {
@@ -199,6 +147,7 @@ button {
 }
 
 .note button i {
+    width: 100%;
     width: 600px;
     border: none;
     background-color: #f0f0ec;
@@ -220,31 +169,106 @@ button {
     flex-wrap: wrap;
 }
 
-@media(max-width: 2000px) {
-    .burger-icon {
-        display: block;
+
+@media(max-width: 1052px) {
+  
+    .input-group input {
+        width: 600px;
     }
 
-    .menu {
-        display: none;
-    }
-
-    #menu-toggle:checked + .burger-icon + .menu {
-        display: flex;
-    }
-
-    .menu ul {
-        flex-direction: column;
-    }
-
-    .menu li {
-        padding: 12px 16px;
-        text-align: cenoter;
-    }
-
-    .menu li a {
-        color: red;
-        font-size: 18px;
+    .icons {
+        padding-left: 60px;
     }
 }
 
+@media(max-width: 940px) {
+
+    .hero-section {
+        gap: 20px;
+    }
+
+    .input-group input {
+        padding-left: 0;
+        width: 200px;
+    }
+
+    .icons {
+        padding-left: 10px;
+    }
+}
+
+@media(max-width: 768px) {
+
+    .draft-container {
+        padding: 10px;
+    }
+  
+    .note {
+        width: 100%;
+    } 
+
+    .input-group input {
+        width: 150px;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .note input,
+    .note textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .note button i {
+        font-size: 36px;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media(max-width: 450px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .draft-container {
+        padding: 5px;
+    }
+
+    .input-group input {
+        width: 40px;
+        padding-left: 0px;
+    }
+
+    .headline {
+        font-size: 18px;
+    }
+
+    .guide-signs {
+        margin-left: 0;
+    }
+
+    .note {
+        width: 100%;
+    }
+
+    .note input,
+    .note textarea {
+        font-size: 16px;
+    }
+
+    .note button {
+        font-size: 24px;
+    }
+
+    .note-headline::placeholder,
+    .note-text::placeholder {
+        font-size: 14px;
+    }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" conotent="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./style-footer.css">
@@ -15,18 +15,6 @@
     <div class="overflow-x-hidden">
         <header>
             <div class="hero-section">
-                <div class="burger-menu">
-                    <input type="checkbox" id="menu-toggle">
-                    <label for="menu-toggle" class="burger-icon">
-                        <i class="fa-solid fa-bars"></i>
-                    </label>
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                        </ul>
-                    </nav>
-                </div>
                 <h1 class="headline">Today's To Do's</h1>
                 <div class="input-group">
                     <button class="input-button" id="#"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -39,21 +27,23 @@
                 </div>         
             </div>
         </header>
-        <div class="guide-signs">
-            <a href=""><i class="fa-solid fa-pencil"></i></a>
-            <a href=""><i class="fa-regular fa-star"></i></a>
-            <a href=""><i class="fa-solid fa-recycle"></i></a>
-        </div>
-        <div class="draft-container">
-            <div class="note-input">
-                <div class="note">
-                    <input type="text" class="note-headline" id="todo-input" placeholder="Neue Liste..." >
-                    <textarea placeholder="neue Notiz" class="note-text" id="note-text" cols="30" rows="20"></textarea>
-                    <button id="add-todo"><i class="fa-regular fa-square-check"></i></button>
+        <section>
+            <div class="guide-signs">
+                <a href=""><i class="fa-solid fa-pencil"></i></a>
+                <a href=""><i class="fa-regular fa-star"></i></a>
+                <a href=""><i class="fa-solid fa-recycle"></i></a>
+            </div>
+            <div class="draft-container">
+                <div class="note-input">
+                    <div class="note">
+                        <input type="text" class="note-headline" id="todo-input" placeholder="Neue Liste..." >
+                        <textarea placeholder="neue Notiz" class="note-text" id="note-text"></textarea>
+                        <button id="add-todo"><i class="fa-regular fa-square-check"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="new-container"></div>
+            <div class="new-container"></div>
+        </section>
         <footer>
             <div class="upper-footer">
                 <div class="separator-div-left"></div>
