@@ -6,3 +6,4 @@ function showBurgerMenu() {
         document.getElementById('menu').classList.remove('show-burgerMenu')
     }
 }
+
