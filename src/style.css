@@ -222,8 +222,6 @@ h2 {
 
 .main-container {
     padding: 8px;
-    font-size: 22px;
-    width: 80vh;
     border: 1px solid #888787;
     background-color: rgba(68, 68, 68, 0.87);
     color: rgba(247, 131, 154, 0.815);
@@ -244,6 +242,7 @@ h2 {
 
     .burgerMenu{
         top: 70px;
+        padding: 8px;
         background: radial-gradient(circle at 10% 20%, rgba(247, 131, 154, 0.815) 0%, rgb(0, 0, 0) 90.5%);
     }
 
