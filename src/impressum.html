@@ -12,35 +12,38 @@
 
 </head>
 <body>
-    <header>
-        <div class="hero-section">
-            <h1 class="headline">Today's To Do's</h1>
-            <div class="input-group">
-                <button class="input-button" id="#"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input type="text" class="input-section" placeholder="search...">
+    <main>
+        <header>
+            <input onchange="showBurgerMenu()" id="checkbox" type="checkbox">
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="icons">
-                <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
-                <a href="#"><i class="fa-solid fa-list"></i></a>
-                <a href="#"><i class="fa-solid fa-gears"></i></a>
-            </div>         
+            <ul class="burgerMenu" id="menu">
+                <a href="../src/index.html"><i class="fa-solid fa-pencil"></i><small>Notizen</small></a>
+                <a href="wastebasket.html"><i class="fa-solid fa-recycle"></i><small>Papierkorb</small></a>
+                <a href="../src/datenschutz.html"><i class="fa-solid fa-umbrella"></i><small>Datenschutz</small></a>
+                <a href="../src/impressum.html"><i class="fa-solid fa-server"></i><small>Impressum</small></a>
+            </ul>
+            <h1 class="headline">Impressum</h1>      
+        </header>
+        <div class="seperator-head"></div>
+        <div class="main-container data">
+            <h2>Impressum</h2>
+            <p>Sonja Reimann-Thanisch <br>
+                Uerdinger Str. 782 <br>
+                47800 Krefeld
+            </p>
+
+            <h3>Kontakt</h3>
+            <p>Telefon: 0178 - 8286541 <br>
+                Telefax: +49 (0) 2151 48 65 723 <br>
+                E-Mail: sonja.reimann.thanisch@gmail.com
+            </p>
+            <p>Quelle: <a href="https://www.e-recht24.de/">eRecht24.de</a></p>
         </div>
-    </header>
-    <div class="guide-signs">
-        <a href=""><i class="fa-solid fa-pencil"></i></a>
-        <a href=""><i class="fa-regular fa-star"></i></a>
-        <a href=""><i class="fa-solid fa-recycle"></i></a>
-    </div>
-    <div class="draft-container">
-        <div class="note-input">
-            <div class="note">
-                <input type="text" class="note-headline" id="todo-input" placeholder="Neue Liste..." >
-                <textarea placeholder="neue Notiz" class="note-text" id="note-text"></textarea>
-                <button id="add-todo"><i class="fa-regular fa-square-check"></i></button>
-            </div>
-        </div>
-    </div>
-    <div class="new-container"></div>
+    </main>
     <footer>
         <div class="upper-footer">
             <div class="separator-div-left"></div>
@@ -61,7 +64,6 @@
         <div class="lower-footer">
             <a class="lower-footer-a" href="./datenschutz/index.html">Datenschutz</a>
             <a class="lower-footer-a" href="./impressum/index.html">Impressum</a>
-            <a class="lower-footer-a" href="./contact/index.html">Kontakt</a>
         </div>
     </footer>
 </body>

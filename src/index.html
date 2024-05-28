@@ -12,61 +12,59 @@
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <div class="overflow-x-hidden">
-        <header>
-            <div class="hero-section">
-                <h1 class="headline">Today's To Do's</h1>
-                <div class="input-group">
-                    <button class="input-button" id="#"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="text" class="input-section" placeholder="search...">
-                </div>
-                <div class="icons">
-                    <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
-                    <a href="#"><i class="fa-solid fa-list"></i></a>
-                    <a href="#"><i class="fa-solid fa-gears"></i></a>
-                </div>         
+  <div class="content-wrap">
+    <main>
+      <header>
+        <input onchange="showBurgerMenu()" id="checkbox" type="checkbox">
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="burgerMenu" id="menu">
+          <a href="index.html"><i class="fa-solid fa-pencil"></i><small>Notizen</small></a>
+          <a href="wastebasket.html"><i class="fa-solid fa-recycle"></i><small>Papierkorb</small></a>
+          <a href="../src/datenschutz.html"><i class="fa-solid fa-umbrella"></i><small>Datenschutz</small></a>
+          <a href="../src/impressum.html"><i class="fa-solid fa-server"></i><small>Impressum</small></a>
+        </ul>
+        <h1 class="headline">Today's To Do's</h1>      
+      </header>
+      <div class="seperator-head"></div>
+      <div class="new-container" id="edit"></div>
+      <section class="input-section">
+        <div class="input-container">
+          <form class="note-input">
+              <input type="text" class="note-headline" id="todo-input" placeholder="Neue Liste..." >
+              <textarea placeholder="neue Notiz" class="note-text" id="note-text" cols="30" rows="10"></textarea>
+              <button id="add-todo"><i class="fa-regular fa-square-check"></i></button>
+          </form>
+        </div>
+        <div class="new-container"></div>
+      </section>
+      <section class="notes" id="addNotes"></section>
+    </main>
+    <footer>
+        <div class="upper-footer">
+            <div class="separator-div-left"></div>
+            <div class="social-media-logos">
+                <a href="https://developerakademie.com/" target="_blank"><img class="social-logo-first" src="../img/developer_akademie.png" alt="developerakademie-logo" /></a>
+                <a href="https://github.com/Sonja40/toDo_notes" target="_blank"><img class="social-logo" src="../img/icons8-github-64.png" alt="github-logo" /></a>
+                <a href="https://magical-alpaca-41ce43.netlify.app/" target="_blank"><img class="social-logo" src="../img/netlify.png" alt="netlify-logo" /></a>
+                <a href="https://www.youtube.com/channel/UCYCkEZzQpFdI81SEEgWw98g" target="_blank"><img class="social-logo" src="../img/youtube.png" alt="youtube-logo" /></a>
             </div>
-        </header>
-        <section>
-            <div class="guide-signs">
-                <a href=""><i class="fa-solid fa-pencil"></i></a>
-                <a href=""><i class="fa-regular fa-star"></i></a>
-                <a href=""><i class="fa-solid fa-recycle"></i></a>
-            </div>
-            <div class="draft-container">
-                <div class="note-input">
-                    <div class="note">
-                        <input type="text" class="note-headline" id="todo-input" placeholder="Neue Liste..." >
-                        <textarea placeholder="neue Notiz" class="note-text" id="note-text"></textarea>
-                        <button id="add-todo"><i class="fa-regular fa-square-check"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="new-container"></div>
-        </section>
-        <footer>
-            <div class="upper-footer">
-                <div class="separator-div-left"></div>
-                <div class="social-media-logos">
-                    <a href="https://developerakademie.com/" target="_blank"><img class="social-logo-first" src="../img/developer_akademie.png" alt="developerakademie-logo" /></a>
-                    <a href="https://github.com/Sonja40/toDo_notes" target="_blank"><img class="social-logo" src="../img/icons8-github-64.png" alt="github-logo" /></a>
-                    <a href="https://magical-alpaca-41ce43.netlify.app/" target="_blank"><img class="social-logo" src="../img/netlify.png" alt="netlify-logo" /></a>
-                    <a href="https://www.youtube.com/channel/UCYCkEZzQpFdI81SEEgWw98g" target="_blank"><img class="social-logo" src="../img/youtube.png" alt="youtube-logo" /></a>
-                </div>
-                <div class="separator-div-right"></div>
-            </div>
-        
-            <div class="center-footer author-logo">
-                <img src="../img/profile-logo.jpeg" alt="Sonja-logo" href="../index.html" />
-                <p>&copy; 2024 Sonja Reimann-Thanisch</p>
-            </div>
-        
-            <div class="lower-footer">
-                <a class="lower-footer-a" href="./datenschutz/index.html">Datenschutz</a>
-                <a class="lower-footer-a" href="./impressum/index.html">Impressum</a>
-                <a class="lower-footer-a" href="./contact/index.html">Kontakt</a>
-            </div>
-        </footer>
-    </div>
+            <div class="separator-div-right"></div>
+        </div>
+    
+        <div class="center-footer author-logo">
+            <img src="../img/profile-logo.jpeg" alt="Sonja-logo" href="../index.html" />
+            <p>&copy; 2024 Sonja Reimann-Thanisch</p>
+        </div>
+    
+        <div class="lower-footer">
+            <a class="lower-footer-a" href="../src/datenschutz.html">Datenschutz</a>
+            <a class="lower-footer-a" href="../src/impressum.html">Impressum</a>
+        </div>
+    </footer>
+  </div>
 </body>
 </html>

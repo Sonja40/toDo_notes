@@ -3,32 +3,93 @@
     src: url('../fonts/eraser/EraserRegular.ttf') format('truetype');
 }
 
-html {
-    height: 100vh;
-}
- 
+
 body {
     background-image: url(../img/tafel.jpg);
     background-size: cover;
+    background-repeat: stretch;
     background-position: center;
-    margin: 0;
-    font-family: 'Eraser', sans-serif;
-}
+    overflow-x: hidden;
 
+}
 
 header {
-    padding: 0px 20px;
-    margin: 0;
-}
-
-.hero-section {
     display: flex;
-    align-items: center;
-    gap: 80px;
-    border-bottom: 1px solid #a09fa4;
+    justify-content: center;
 }
 
-.headline {
+main {
+    flex: 1;
+    position: relative;
+}
+
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} 
+
+.burger {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+#checkbox {
+    position: absolute;
+    opacity: 0;
+    top: 32px;
+    left: 17px;
+    width: 28px;
+    height: 28px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 8px;
+    background: rgba(247, 131, 154, 0.849);;
+    border-radius: 3px;
+}
+
+.burgerMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    padding-inline-start: 0;
+    padding-left: 30px;
+    left: 0;
+    top: 99px;
+    margin-top: 10px;
+    transform: translateX(-200px);
+    transition: all 225ms ease-in-out;
+    gap: 20px;
+}
+
+.show-burgerMenu {
+    transform: translateX(0px);
+}
+
+a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(247, 131, 154, 0.849);
+}
+
+small {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+h1 {
+    font-family: 'Eraser', sans-serif;
+    text-align: center;
     color: rgba(247, 131, 154, 0.849);
     font-size: 36px;
     text-shadow: 
@@ -38,123 +99,103 @@ header {
          1px  1px 0 #000;
 }
 
-.input-group {
-    display: flex;
-    background-color: hsla(0, 0%, 25%, 0.726);
-}
-
-.input-group input {
-    width: 800px;
-    height: 40px;
-    font-size: 18px;
-    border-radius: 10px;
-    font-family: 'Eraser', sans-serif;
-}
-
-.input-group button {
-    width: 60px;
-    border-radius: 10px;
-    background-color: hsla(0, 0%, 34%, 0.726);
-}
-
-.icons {
-    display: flex;
-    gap: 24px;
-    padding-left: 200px;
-}
-
-.icons a:hover {
-    background-color: rgba(228, 42, 79, 0.534);
-    padding: 10px;
-    border-radius: 50%;
+h1.headline {
+    border: none;
+    border-radius: 70px;
+    background-color: rgba(68, 68, 68, 0.87);
+    padding: 10px 40px;
 }
 
 .fa-solid,
 .fa-regular {
     color: rgba(247, 131, 154, 0.815);
-    font-size: 24px;
-}
-
-.guide-signs {
-    display: flex;
-    flex-direction: column;
-    margin-top: 64px;
-    margin-left: 20px;
-    gap: 10px;
-}
-
-.guide-signs a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 58px;
-    height: 58px;
-    border: 0.1px solid transparent;
-    border-radius: 50%;
-    background-color: #44454b67;
-    text-decoration: none;
-}
-
-.guide-signs i {
     font-size: 20px;
 }
 
-.guide-signs a:hover {
-    background-color: rgba(228, 42, 79, 0.534);
-    padding: 10px;
-}
-
-.draft-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -200px;
-    margin-bottom: 200px;
-}
-
-.note-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.note {
-    display: flex;
-    flex-direction: column;
+.seperator-head {
+    background-color: #888787;
+    height: 0.5px;
     width: 100%;
-    max-width: 800px;
+    margin-bottom: 20px;
+    margin-top: -15px;
 }
 
-.note input {
-    border: none;
+.new-container {
+    position: absolute;
+    padding: 8px;
+    width: 240px;
+    height: 240px;
     font-size: 20px;
-    border-radius: 10px 10px 0 0;
-    padding: 10px;
-    background-color: #f0f0ec;
-    font-family: 'Eraser', sans-serif;
+    top: 290px;
+    box-shadow: 8px 8px 5px #40cbf5;
+    background-image: linear-gradient(to bottom right, #40f5c8, #2777c2);
+    z-index: 9;
+    transform: translateX(-1000%);
+    font-family: Caveat;
 }
 
-.note textarea {
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.input-container {
+    margin-top: 64px;
+    display: flex;
+    margin-left: 90px;
+    border: 2px solid;
     border: none;
-    padding: 14px;
-    font-family: 'Eraser', sans-serif;
+    flex-direction: column;
+    width: 450px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-family: "Ubuntu Sans Mono", monospace;
+    background-color: #f0f0ec;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.note-headline {
+    height: 30px;
+    border: none;
+    background-color: #f0f0ec;
+    text-align: left;
+    font-size: 20px;
+    font-family: "Ubuntu Sans Mono", monospace;
+}
+
+.note-text {
+    margin-top: 4%;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    display: flex;
+    font-family: "Ubuntu Sans Mono", monospace;
     font-size: 18px;
 }
 
 button {
-    border-radius: 0 0 15px 15px;
-    border: none;
-}
-
-.note button i {
-    width: 100%;
-    width: 600px;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
     border: none;
     background-color: #f0f0ec;
-    border-radius: 4px;
+    border-radius: 5px;
+}
+
+.fa-square-check {
+    width: 100%;
     cursor: pointer;
     font-size: 48px;
-    padding: 10px;
 }
 
 .note-headline::placeholder,
@@ -162,113 +203,99 @@ button {
     color: rgba(228, 42, 79, 0.534);
 }
 
-.new-container {
-    width: 100%;
+.notes {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
-
-@media(max-width: 1052px) {
-  
-    .input-group input {
-        width: 600px;
-    }
-
-    .icons {
-        padding-left: 60px;
-    }
+h2 {
+    font-family: 'Eraser', sans-serif;
+    color: rgba(247, 131, 154, 0.849);
+    font-size: 36px;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; 
 }
 
-@media(max-width: 940px) {
+.main-container {
+    padding: 8px;
+    font-size: 22px;
+    width: 80vh;
+    border: 1px solid #888787;
+    background-color: rgba(68, 68, 68, 0.87);
+    color: rgba(247, 131, 154, 0.815);
+    font-family: "Ubuntu Sans Mono", monospace;
+}
 
-    .hero-section {
-        gap: 20px;
-    }
-
-    .input-group input {
-        padding-left: 0;
-        width: 200px;
-    }
-
-    .icons {
-        padding-left: 10px;
-    }
+.data {
+    margin: 20px;
+    font-size: 14px;
+    max-width: none;
 }
 
 @media(max-width: 768px) {
-
-    .draft-container {
-        padding: 10px;
-    }
-  
-    .note {
-        width: 100%;
-    } 
-
-    .input-group input {
-        width: 150px;
-    }
-
-    .icons {
-        display: none;
-    }
-
-    .note input,
-    .note textarea {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    .note button i {
-        font-size: 36px;
-        width: 100%;
-    }
-
-    button {
-        width: 100%;
-    }
-}
-
-@media(max-width: 450px) {
 
     body {
         font-size: 14px;
     }
 
-    .draft-container {
-        padding: 5px;
+    .burgerMenu{
+        top: 70px;
+        background: radial-gradient(circle at 10% 20%, rgba(247, 131, 154, 0.815) 0%, rgb(0, 0, 0) 90.5%);
     }
 
-    .input-group input {
-        width: 40px;
-        padding-left: 0px;
+    .input-container {
+        margin: 48px 0px;
     }
-
-    .headline {
-        font-size: 18px;
+    .notes {
+        justify-content: center;
     }
-
-    .guide-signs {
-        margin-left: 0;
-    }
-
-    .note {
-        width: 100%;
-    }
-
-    .note input,
-    .note textarea {
-        font-size: 16px;
-    }
-
-    .note button {
+    
+    h1 {
         font-size: 24px;
+        margin-bottom: 40px;
+        margin-top: 30px;
     }
 
+}
+
+@media(max-width: 450px) {
+
+    body {
+        font-size: 12px;
+    }
+
+    h1.headline {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding: 10px 10px;
+    }
+
+    .burger {
+        top: 16px;
+    }
+
+    .seperator-head {
+        margin-bottom: 60px;
+    }
     .note-headline::placeholder,
     .note-text::placeholder {
         font-size: 14px;
+    }
+
+    .input-container {
+        margin: 20px 0px;
+        width: 300px;
+    }
+
+    .main-container {
+        width: auto;
+    }
+
+    .main-container h1 {
+        font-size: 20px;
     }
 }
