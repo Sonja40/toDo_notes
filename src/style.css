@@ -151,6 +151,25 @@ h1.headline {
     width: 450px;
 }
 
+.input-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-icon  img{
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.trash {
+    color: rgba(247, 131, 154, 0.815);
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -241,6 +260,10 @@ h2 {
     margin: 20px;
     font-size: 14px;
     max-width: none;
+}
+
+.d-none {
+    display: none !important;
 }
 
 @media(max-width: 768px) {

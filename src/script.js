@@ -47,18 +47,62 @@ function render() {
 
         basket.innerHTML += `
             <div class="note">
-            <a><img id="notePin" src="./img/pin.png onclick="editNote(§{i})"><a/>
-            <a><img id="removeImg" src="./img/glass-container.png onclick="deleteNote(§{i})"
-            <h2>${content}</h2>
-            <p>${entry}</p>
+            <p> <b>Neue Liste: </b>${content}</p>
+            <p> <b>Neue Notiz: </b>${entry}</p>
+            <button onclick="addNote()" id="add-todo">
+                <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
+                </button>
             </div>
         `;
     }
 }
 
-function addNote() {
-    let content = document.getElementById('content');
-    let entry = document.getElementById('entry');
+function renderTrashBin() {
+    let basket = document.getElementById('trash');
+    basket.innerHTML = ``;
+
+    for (let i = 0; i < removeContent.length; i++) {
+        const content = removeContent[i];
+        const entry = removeEntry[i];
+
+        basket.innerHTML += `
+        <div class="note">
+            <p> <b>Neue Liste: </b>${content}</p>
+            <p> <b>Neue Notiz: </b>${entry}</p>
+            <button onclick="addNote()" id="add-todo">
+                <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
+                </button>
+        </div>
+        <div class="input-icon">
+            <button onclick="openTrash()">
+            <img src="../img/behalter.png" alt="Trash-bin" class="input-icon">
+            </button>
+            <button onclick="addNote()" id="add-todo">
+            <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
+            </button>
+        </div>
+        `;
+    }
+}
 
 
+function addNOte() {
+    let content = document.getElementById('todo-input');
+    let entry = document.getElementById('note-text');
+
+    if (content.value == '' & entry.value == '') {
+        alert("Bitte einen neue Liste und neue Notiz engeben!");
+    }
+    else if (content.value == '') {
+        alert('Bitte neue Liste anlegen!') ;
+    }
+    else if (entry.value == '') {
+        alert('Bitte Notizfeld ausfüllen!')
+    }
+    else {
+        content.push(content.value);
+        entry.push(entry.value);
+        render();
+        save();
+    }
 }
