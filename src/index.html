@@ -30,28 +30,28 @@
         <h1 class="headline">Today's To Do's</h1>      
       </header>
       <div class="seperator-head"></div>
-      <div class="new-container" id="edit"></div>
       <section class="input-section">
-        <div class="input-container">
+        <div class="input-container" id="inputContainer">
           <form class="note-input">
-              <input type="text" class="note-headline" id="todo-input" placeholder="Neue Liste..." >
-              <textarea placeholder="neue Notiz" class="note-text" id="note-text" cols="30" rows="10"></textarea>
-              <div class="input-icon">
-                <button onclick="openTrash()">
+            <input type="text" class="note-headline" id="todo-input" placeholder="Neue Liste..." >
+            <textarea placeholder="neue Notiz" class="note-text" id="note-text" cols="30" rows="10"></textarea>
+            <div class="input-icon">
+              <button onclick="openTrash()" type="button">
                 <img src="../img/behalter.png" alt="Trash-bin" class="input-icon">
-                </button>
-                <button onclick="addNote()" id="add-todo">
+              </button>
+              <button onclick="addNote()" id="add-todo" type="button">
                 <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
-                </button>
-              </div>
+              </button>
+            </div>
           </form>
         </div>
-        <div class="new-container"></div>
       </section>
-      <section class="notes" id="addNote"></section>
-      <section class="trash-basket" id="trash-basket-container d-none">
+      <section class="notes" id="note-container">
+        <div class="note-container"></div>
+      </section>
+      <section class="trash-basket d-none" id="trashBasketContainer">
         <h1>Papierkorb</h1>
-        <button onclick="addNote()" id="add-todo">
+        <button onclick="displaytrashnone()" id="add-todo">
           <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
         </button>
         <div id="trashbox">

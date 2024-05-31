@@ -7,102 +7,102 @@ function showBurgerMenu() {
     }
 }
 
-let content = [];
-let entry = [];
-let removeContent = [];
-let removeEntry = [];
-load();
+let contentInput = [];
+let entryInput = [];
+let removeContentInput= [];
+let removeEntryInput = [];
 
-function load() {
-    let contentastext = localStorage.getItem('content');
-    let entryasText = localStorage.getItem('entry');
-    let removeContentasText = localStorage.getItem('removeContent');
-    let removeEntryasText = localStorage.getItem('removeEntry');
-    if (contentastext && entryasText && removeContentasText && removeEntryasText) {
-        content.JSON.parse(contentastext);
-        entry.JSON.parse(entryasText);
-        removeContent.JSON.parse(removeContentasText);
-        removeEntry.JSON.parse(removeEntryasText);
-    }
-}
-
-function save() {
-    let contentastext = JSON.stringify(content);
-    let entryasText = JSON.stringify(entry);
-    let removeContentasText = JSON.stringify(removeContent);
-    let removeEntryasText =JSON.stringify(removeEntry);
-    localStorage.setItem('content', contentastext);
-    localStorage.setItem('entry', entryasText);
-    localStorage.setItem('removeContent', removeContentasText);
-    localStorage.setItem('removeEntry', removeEntryasText);
-}
 
 function render() {
-    let basket = document.getElementById('addNote');
-    basket.innerHTML = '';
+    let contentInput = JSON.parse(localStorage.getItem('todo-input') || '[]');
+    let entryInput = JSON.parse(localStorage.getItem('note-text') || '[]');
+    let newNotes = document.getElementById("newNotes");
+    newNotes.innerHTML = "";
     
-    for (i = 0; i < content.length; i++ ) {
-        const content = content[i];
-        const entry = entry[i];
-
-        basket.innerHTML += `
+    for (i = 0; i < entry.length; i++ ) {
+        newNotes.innerHTML += `
+        <div class="new-container">
             <div class="note">
-            <p> <b>Neue Liste: </b>${content}</p>
-            <p> <b>Neue Notiz: </b>${entry}</p>
-            <button onclick="addNote()" id="add-todo">
+            <textarea class="title" readonly>${contentInput[i]}</textarea>
+            <textarea class="text" readonly>${entryInput[i]}</textarea>
+            <button onclick="removeNote(${i})">
                 <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
+            </button>
+        </div>`;
+    }
+}
+
+
+function addNote() {
+    let content = document.getElementById('todo-input').value;
+    let entry = document.getElementById('note-text').value;
+
+    if (contentInput.trim() || entryInput.trim()) {
+        alert("Bitte Notizfeld ausfüllen!");
+        return;
+    }
+
+    let { contentInput, entryInput } = load();
+
+    contentInput.push(content);
+    entryInput.push(entry);
+   
+    save(contentInput, entryInput);
+    document.getElementById('todo-input').value = '';
+    document.getElementById('note-text').value = '';
+
+    render()
+    
+}
+
+function save(contentInput, entryInput) {
+    localStorage.setItem('contentInput', JSON.stringify(contentInput));
+    localStorage.setItem('entryInput', JSON.stringify(entryInput));
+}
+
+
+function load() {
+    let contentInput = JSON.parse(localStorage.getItem('todo-input') || '[]');
+    let entryInput = JSON.parse(localStorage.getItem('note-text') || '[]');
+
+    return { contentInput, entryInput};
+}
+
+function renderNewNoteElement(i) {
+    return `
+    <div class="newNoteContainer">
+            <div class="note">
+                <textarea class="title" readonly>${contentInput[i]}</textarea>
+                <textarea class="text" readonly>${entryInput[i]}</textarea>
+                <button onclick="removeNote(${i})">
+                    <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
                 </button>
             </div>
-        `;
-    }
-}
-
-function renderTrashBin() {
-    let basket = document.getElementById('trash');
-    basket.innerHTML = ``;
-
-    for (let i = 0; i < removeContent.length; i++) {
-        const content = removeContent[i];
-        const entry = removeEntry[i];
-
-        basket.innerHTML += `
-        <div class="note">
-            <p> <b>Neue Liste: </b>${content}</p>
-            <p> <b>Neue Notiz: </b>${entry}</p>
-            <button onclick="addNote()" id="add-todo">
-                <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
-                </button>
         </div>
-        <div class="input-icon">
-            <button onclick="openTrash()">
-            <img src="../img/behalter.png" alt="Trash-bin" class="input-icon">
-            </button>
-            <button onclick="addNote()" id="add-todo">
-            <img src="../img/pin.png" alt="save Pin" class="input-icon trash">
-            </button>
-        </div>
-        `;
-    }
+    `
 }
 
 
-function addNOte() {
-    let content = document.getElementById('todo-input');
-    let entry = document.getElementById('note-text');
+function removeNote(i) {
+    let contentInput = JSON.parse(localStorage.getItem('contentInput'));
+    let entryInput = JSON.parse(localStorage.getItem('entryInput'));
+    let removeContentInput = JSON.parse(localStorage.getItem('removecontentInput') || '[]');
+    let removeEntryInput = JSON.parse(localStorage.getItem('removeEntryInput') || '[]');
 
-    if (content.value == '' & entry.value == '') {
-        alert("Bitte einen neue Liste und neue Notiz engeben!");
-    }
-    else if (content.value == '') {
-        alert('Bitte neue Liste anlegen!') ;
-    }
-    else if (entry.value == '') {
-        alert('Bitte Notizfeld ausfüllen!')
-    }
-    else {
-        content.push(content.value);
-        entry.push(entry.value);
-        render();
-        save();
-    }
+  
+    removeContentInput.push(contentInput[i]);
+    removeEntryInput.push(entryInput[i]);
+
+  
+    contentInput.splice(i, 1);
+    entryInput.splice(i, 1);
+
+  
+    localStorage.setItem('titles', JSON.stringify(contentInput));
+    localStorage.setItem('texts', JSON.stringify(entryInput));
+    localStorage.setItem('deletedTitles', JSON.stringify(removeContentInput));
+    localStorage.setItem('deletedTexts', JSON.stringify(removeEntryInput));
+
+  
+    render();
 }
