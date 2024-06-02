@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-footer.css">
+    <script src="script/script.js"></script>
+    <script src="https://kit.fontawesome.com/c3debeb7cc.js" crossorigin="anonymous"></script>
+    <title>To do's</title>
+    <link rel="icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+</head>
+<body onload="render()">
+  <div class="content-wrap">
+    <main>
+      <header>
+        <input onchange="showBurgerMenu()" id="checkbox" type="checkbox">
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="burgerMenu" id="menu">
+          <a href="./index.html"><i class="fa-solid fa-pencil"></i><small>Notizen</small></a>
+          <a href="./papierkorb.html"><i class="fa-solid fa-recycle"></i><small>Papierkorb</small></a>
+          <a href="./datenschutz.html"><i class="fa-solid fa-umbrella"></i><small>Datenschutz</small></a>
+          <a href="./impressum.html"><i class="fa-solid fa-server"></i><small>Impressum</small></a>
+        </ul>
+        <h1 class="headline" id="headline">Today´s To Do´s</h1>     
+      </header>
+      <div class="seperator-head"></div>
+      
+      <div class="edit" id="edit"></div> 
+
+      <div class="input-section">
+        <div class="input-container">
+          <form class="note-input">
+
+            <input type="text" class="note-headline" id="title" placeholder="Neue Liste..." >
+            
+            <textarea placeholder="neue Notiz" class="text" id="text" cols="30" rows="10"></textarea>
+            
+            <div class="input-icon">
+              
+              <button onclick="removeNote()" type="button">
+                <img src="./img/behalter.png" alt="Trash-bin" class="input-icon">
+              </button>
+              
+              <button onclick="addNote()" id="add-todo" type="button">
+                <img src="./img/pin.png" alt="save Pin" class="input-icon trash">
+              </button>
+            
+            </div>
+          </form>
+        </div>
+      </div>
+      <section class="notes" id="notes"></section>
+    </main>
+    <footer>
+        <div class="upper-footer">
+            <div class="separator-div-left"></div>
+            <div class="social-media-logos">
+                <a href="https://developerakademie.com/" target="_blank"><img class="social-logo-first" src="./img/developer_akademie.png" alt="developerakademie-logo" /></a>
+                <a href="https://github.com/Sonja40/toDo_notes" target="_blank"><img class="social-logo" src="./img/icons8-github-64.png" alt="github-logo" /></a>
+                <a href="https://magical-alpaca-41ce43.netlify.app/" target="_blank"><img class="social-logo" src="./img/netlify.png" alt="netlify-logo" /></a>
+                <a href="https://www.youtube.com/channel/UCYCkEZzQpFdI81SEEgWw98g" target="_blank"><img class="social-logo" src="./img/youtube.png" alt="youtube-logo" /></a>
+            </div>
+            <div class="separator-div-right"></div>
+        </div>
+    
+        <div class="center-footer author-logo">
+            <img src="./img/profile-logo.jpeg" alt="Sonja-logo" href="./index.html" />
+            <p>&copy; 2024 Sonja Reimann-Thanisch</p>
+        </div>
+    
+        <div class="lower-footer">
+            <a class="lower-footer-a" href="./datenschutz.html">Datenschutz</a>
+            <a class="lower-footer-a" href="./impressum.html">Impressum</a>
+        </div>
+    </footer>
+  </div>
+</body>
+</html>
+

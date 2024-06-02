@@ -1,0 +1,13 @@
+h2 {
+    cursor: auto;
+    pointer-events: none;
+}
+
+.noteText {
+    cursor: auto;
+    pointer-events: none;
+}
+
+#restoreImg {
+    display: inline;
+}

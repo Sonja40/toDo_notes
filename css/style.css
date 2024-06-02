@@ -170,6 +170,105 @@ h1.headline {
     color: rgba(247, 131, 154, 0.815);
 }
 
+.edit {
+    position: absolute;
+    padding: 8px;
+    width: 240px;
+    height: 240px;
+    font-family: Caveat;
+    font-size: 22px;
+    top: 290px;
+    left: calc(50vw - (
+                /* width */
+                240px / 2));
+    box-shadow: 8px 8px 5px #4061f5;
+    background-image: linear-gradient(to bottom right, #ad40f5, #27abc2);
+    z-index: 9;
+    transform: translateX(-1000%);
+}
+
+.titleEdit {
+    background-color: #7c27c28a;
+    text-align: center;
+    height: 44px;
+    width: 235px;
+    font-weight: 600;
+    font-size: 34px;
+    font-family: Caveat;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.editShow {
+    transform: translateX(0);
+}
+
+#note {
+    white-space: pre-wrap;
+}
+
+.titleEdit {
+    cursor: pointer;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: Caveat;
+    height: 148px;
+    width: 235px;
+}
+
+.noteEdit {
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: #7727c28a;
+    font-family: Caveat;
+    font-size: 22px;
+    height: 180px;
+    width: 235px;
+}
+
+#notePin {
+    width: 28px;
+    position: absolute;
+    margin-left: 115px;
+    margin-top: -28px;
+}
+
+#notePinEdit {
+    width: 28px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -52px;
+}
+
+p {
+    cursor: pointer;
+    margin-top: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#deleteImg {
+    width: 28px;
+    cursor: pointer;
+    position: relative;
+    left: 216px;
+    top: 210px;
+}
+
+#restoreImg {
+    display: none;
+    width: 34px;
+    cursor: pointer;
+    position: relative;
+    left: -38px;
+    top: 210px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -188,9 +287,10 @@ form {
     text-align: left;
     font-size: 20px;
     font-family: "Ubuntu Sans Mono", monospace;
+    color: #3d15638a;
 }
 
-.note-text {
+.text {
     margin-top: 4%;
     border: none;
     border-radius: 5px;
@@ -198,6 +298,7 @@ form {
     display: flex;
     font-family: "Ubuntu Sans Mono", monospace;
     font-size: 18px;
+    color: #3d15638a;
 }
 
 button {
@@ -218,7 +319,7 @@ button {
 }
 
 .note-headline::placeholder,
-.note-text::placeholder {
+.text::placeholder {
     color: rgba(228, 42, 79, 0.534);
 }
 
@@ -237,15 +338,28 @@ button {
     background-image: linear-gradient(to bottom right, #f7e57e, #f2d25c);
 }
 
+.noteText {
+    cursor: pointer;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: "Mynerve", cursive;
+    height: 148px;
+    width: 235px;
+    font-size: 18px;
+    color: #164169;
+}
+
 h2 {
-    font-family: 'Eraser', sans-serif;
-    color: rgba(247, 131, 154, 0.849);
-    font-size: 36px;
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000; 
+    font-family: "Mynerve", cursive;
+    font-weight: 400;
+    color: rgba(184, 38, 67, 0.849);
+    font-size: 34px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0;
+    margin-top: -28px;
 }
 
 .main-container {
