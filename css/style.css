@@ -157,17 +157,13 @@ h1.headline {
     justify-content: space-between;
 }
 
-.input-icon  img{
+.input-icon img{
     width: 32px;
     height: 32px;
     background: transparent;
     padding-top: 24px;
     padding-left: 24px;
     padding-right: 24px;
-}
-
-.trash {
-    color: rgba(247, 131, 154, 0.815);
 }
 
 .edit {
@@ -237,21 +233,6 @@ h1.headline {
     margin-top: -28px;
 }
 
-#notePinEdit {
-    width: 28px;
-    cursor: pointer;
-    position: absolute;
-    margin-left: -30px;
-    margin-top: -52px;
-}
-
-p {
-    cursor: pointer;
-    margin-top: 6px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
 #deleteImg {
     width: 28px;
     cursor: pointer;
@@ -261,12 +242,11 @@ p {
 }
 
 #restoreImg {
-    display: none;
     width: 34px;
     cursor: pointer;
     position: relative;
-    left: -38px;
-    top: 210px;
+    left: -8px;
+    top: 178px;
 }
 
 form {
@@ -302,14 +282,14 @@ form {
 }
 
 button {
-    display: inline-block;
     padding: 10px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     border: none;
-    background-color: #f0f0ec;
     border-radius: 5px;
+    font-family: "Ubuntu Sans Mono", monospace;
+    background: transparent;
 }
 
 .fa-square-check {
@@ -336,19 +316,18 @@ button {
     height: 240px;
     margin: 0px 0px 30px 30px;
     background-image: linear-gradient(to bottom right, #f7e57e, #f2d25c);
+    overflow: hidden;
 }
 
 .noteText {
-    cursor: pointer;
-    resize: none;
-    outline: none;
     border: none;
     background-color: transparent;
-    font-family: "Mynerve", cursive;
+    font-family: "Ubuntu Sans Mono", monospace;
     height: 148px;
     width: 235px;
-    font-size: 18px;
     color: #164169;
+    font-weight: 400;
+    overflow: auto;
 }
 
 h2 {
@@ -356,10 +335,9 @@ h2 {
     font-weight: 400;
     color: rgba(184, 38, 67, 0.849);
     font-size: 34px;
-    cursor: pointer;
     text-align: center;
     margin: 0;
-    margin-top: -28px;
+    margin-top: -68px;
 }
 
 .main-container {
@@ -370,16 +348,10 @@ h2 {
     font-family: "Ubuntu Sans Mono", monospace;
 }
 
-.data {
-    margin: 20px;
-    font-size: 14px;
-    max-width: none;
-}
 
-.d-none {
-    display: none !important;
+.img {
+    visibility: hidden;
 }
-
 
 @media(max-width: 768px) {
 
