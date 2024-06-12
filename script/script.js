@@ -57,9 +57,7 @@ function newNote(i, title, text, isTrash) {
     <h2>${title}</h2>
     <textarea class="noteText" readonly>${text}</textarea>
     </div>
-
     `;
-
 }
 
 function newTrashNote(i, title, text) {
